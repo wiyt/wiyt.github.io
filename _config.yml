@@ -1,6 +1,7 @@
 baseurl: /wiyt.github.io
 auto: true
-markdown: rdiscount
 pygments: true
 paginate: 8
-fenced_code_blocks: true
+markdown: redcarpet
+redcarpet:
+  extensions: ["fenced_code_blocks", "autolink", "tables", "strikethrough"]
