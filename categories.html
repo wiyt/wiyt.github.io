@@ -5,28 +5,45 @@ title: 『幽窗孤灯』
 
 <h3>文章分类·Categories</h3>
 <ul class="artical-list">
-{% for post in site.categories.others %}
-    <li>
-        <h2>
-            <a href="{{ post.url }}">{{ post.title }}</a>
-        </h2>
-        <div class="title-desc">{{ post.description }}</div>
-    </li>
-{% endfor %}
-{% for post in site.categories.code %}
-    <li>
-        <h2>
-            <a href="{{ post.url }}">{{ post.title }}</a>
-        </h2>
-        <div class="title-desc">{{ post.description }}</div>
-    </li>
-{% endfor %}
-{% for post in site.categories.think %}
-    <li>
-        <h2>
-            <a href="{{ post.url }}">{{ post.title }}</a>
-        </h2>
-        <div class="title-desc">{{ post.description }}</div>
-    </li>
-{% endfor %}
+
+<ul>
+	<li>
+		<h4>代码</h4>
+		<ul>
+				{% for post in site.categories.code %}
+		    <li>
+		        <h2>
+		            <a href="{{ post.url }}">{{ post.title }}</a>
+		        </h2>
+		        <div class="title-desc">{{ post.description }}</div>
+		    </li>
+			{% endfor %}
+		</ul>
+	</li>
+	<li>
+		<h4>思考</h4>
+		<ul>
+		{% for post in site.categories.think %}
+		    <li>
+		        <h2>
+		            <a href="{{ post.url }}">{{ post.title }}</a>
+		        </h2>
+		        <div class="title-desc">{{ post.description }}</div>
+		    </li>
+		{% endfor %}
+		</ul>
+	</li>
+	<li>
+		<h4>其他</h4>
+		<ul>
+		{% for post in site.categories.others %}
+		    <li>
+		        <h2>
+		            <a href="{{ post.url }}">{{ post.title }}</a>
+		        </h2>
+		        <div class="title-desc">{{ post.description }}</div>
+		    </li>
+		{% endfor %}
+		</ul>
+	</li>
 </ul>
