@@ -1,6 +1,7 @@
 ---
 layout: default
 title: bootstrap笔记
+category: blog
 ---
 ##强调相关的类
 `.text-muted`：提示，使用浅灰色（#999）
