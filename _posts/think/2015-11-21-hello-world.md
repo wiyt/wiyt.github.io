@@ -1,6 +1,5 @@
 ---
-layout: default
-title: test page
+layout: article
 category: think
 ---
 ###这是测试页面
