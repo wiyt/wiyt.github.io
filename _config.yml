@@ -12,20 +12,4 @@ redcarpet:
     - fenced_code_blocks
 kramdown:
   input: GFM
-defaults:
-  -
-    scope:
-      path: "blogs"
-      type: "pages"
-    values:
-      layout: "default"
-      author: "wiyt"
-      category: "blogs"
-  -
-    scope:
-      path: "opinion"
-      type: "pages"
-    values:
-      layout: "default"
-      author: "wiyt"
-      category: "opinion"
+permalink: http://wiyt.github.io/_posts/:year/:month/:day/:title
