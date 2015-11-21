@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: article
 title: bootstrap笔记
 category: code
 ---
