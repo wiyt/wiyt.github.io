@@ -1,0 +1,504 @@
+# ##强调相关的类
+`.text-muted`：提示，使用浅灰色（#999）
+`.text-primary`：主要，使用蓝色（#428bca）
+`.text-success`：成功，使用浅绿色(#3c763d)
+`.text-info`：通知信息，使用浅蓝色（#31708f）
+`.text-warning`：警告，使用黄色（#8a6d3b）
+`.text-danger`：危险，使用褐色（#a94442）
+##控制文本对齐风格
+`.text-left`：左对齐
+`.text-center`：居中对齐
+`.text-right`：右对齐
+`.text-justify`：两端对齐
+##bootstrap 列表
+`.list-unstyled`：去点、去编号列表
+`.list-inline`：内联列表
+`.dl-horizontal`：水平定义列表
+## 代码
+在Bootstrap主要提供了三种代码风格：
+1. 使用`<code></code>`来显示单行内联代码；一般是针对于单个单词或单个句子的代码
+2. 使用`<pre></pre>`来显示多行块代码； 一般是针对于多行代码（也就是成块的代码）
+3. 使用`<kbd></kbd>`来显示用户输入代码； 一般是表示用户要通过键盘输入的内容
+.pre-scrollable 代码块区域最大高度为340px，一旦超出这个高度，就会在Y轴出现滚动条。
+##表格
+Bootstrap为表格不同的样式风格提供了不同的类名，主要包括：
+`.table`：基础表格
+`.table-striped`：斑马线表格
+`.table-bordered`：带边框的表格
+`.table-hover`：鼠标悬停高亮的表格
+`.table-condensed`：紧凑型表格
+`.table-responsive`：响应式表格<br />
+Bootstrap还为表格的行元素`<tr>`提供了五种不同的类名，每种类名控制了行的不同背景颜色，具体说明如下表所示：
+![](http://img.mukewang.com/53ad213f0001b08807340508.jpg)
+注意⚠️：
+1. 无论设置什么表格都要带有基础表格`.table`
+2. 响应式表格要提供一个容器`.table-responsive`
+##表单
+Bootstrap框架默认的表单是垂直显示风格
+控价要放在一个类名为`.form-group`容器里；控件需要使用`.form-control`类名
+### 水平表单：标签居左，表单控件居右
+在Bootstrap框架中要实现水平表单效果，必须满足以下两个条件：
+1. 在`form`元素使用类名`.form-horizontal`
+2. 配合bootstrap框架的网格系统
+###内联表单：表单控件都在一行内显示
+`.form-inline`
+###表单控件（单选按钮`radio`、复选框`checkbox`）
+解决`radio`、`checkbox`和`label`配合使用时出现的对齐问题。
+1、不管是checkbox还是radio都使用label包起来了
+2、checkbox连同label标签放置在一个名为“.checkbox”的容器内
+3、radio连同label标签放置在一个名为“.radio”的容器内
+在Bootstrap框架中，主要借助“.checkbox”和“.radio”样式，来处理复选框、单选按钮与标签的对齐方式。源码请查看bootstrap.css文件第1742行～第1762行
+```html
+<form role="form">
+	<div class="checkbox">
+		<label>
+			<input type="checkbox" value="">记住密码
+		</label>
+	</div>
+	<div class="radio">
+		<label>
+			<input type="radio" name="optionsRadios" id="optionsRadios1" value="love" checked>喜欢
+		</label>
+	</div>
+	<div class="radio">
+		<label>
+			<input type="radio" name="optionsRadios" id="optionsRadios2" value="hate">不喜欢
+		</label>
+	</div>
+</form>
+```
+###表单控件(复选框和单选按钮水平排列)
+1、如果checkbox需要水平排列，只需要在label标签上添加类名“checkbox-inline”
+2、如果radio需要水平排列，只需要在label标签上添加类名“radio-inline”
+```html
+	<form role="form">
+	<div class="form-group">
+	    <label class="radio-inline">
+	        <input type="radio" value="option1"/>男性
+	    </label>
+	        <label class="radio-inline">
+	        <input type="radio" value="option2"/>女性
+	    </label>
+	        <label class="radio-inline">
+	        <input type="radio" value="option3"/>中性
+	    </label>
+	    </div>
+	</form>
+```
+###表单控件的大小
+1. input-sm:让控件比正常大小更小
+2. input-lg:让控件比正常大小更大
+这两个类适用于表单中的input，textarea和select控件，具体使用如下：
+```html
+<input class="form-control input-lg" type="text" placeholder="添加.input-lg，控件变大">
+<input class="form-control" type="text" placeholder="正常大小">
+<input class="form-control input-sm" type="text" placeholder="添加.input-sm，控件变小">
+```
+###表单控件状态
+1. 禁用状态：
+Bootstrap框架的表单控件的禁用状态和普通的表单禁用状态实现方法是一样的，在相应的表单控件上添加属性“`disabled`”
+2. 验证状态：
+在制作表单时，不免要做表单验证。同样也需要提供验证状态样式，在Bootstrap框架中同样提供这几种效果。
+1、`.has-warning`:警告状态（黄色）
+2、`.has-error`：错误状态（红色）
+3、`.has-success`：成功状态（绿色）
+使用的时候只需要在form-group容器上对应添加状态类名。
+
+```html
+<form role="form">
+<div class="form-group has-success">
+  <label class="control-label" for="inputSuccess1">成功状态</label>
+  <input type="text" class="form-control" id="inputSuccess1" placeholder="成功状态" >
+</div>
+</form>
+```
+让表单在对应的状态下显示 icon 出来，只需要在对应的状态下添加类名“has-feedback”。请注意，此类名要与“has-error”、“has-warning”和“has-success”在一起：
+
+```html
+<form>
+	  <div class="form-group has-error has-feedback">
+	        <label for="email" class="control-label">email地址</label>
+	      <input type="email" class="form-control" id="email" />
+	      <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+	  </div>
+ </form>
+ ```
+3. 表单提示信息
+平常在制作表单验证时，要提供不同的提示信息。在Bootstrap框架中也提供了这样的效果。使用了一个"help-block"样式，将提示信息以块状显示，并且显示在控件底部。
+
+```html
+<form role="form">
+<div class="form-group has-success has-feedback">
+  <label class="control-label" for="inputSuccess1">成功状态</label>
+  <input type="text" class="form-control" id="inputSuccess1" placeholder="成功状态" >
+  <span class="help-block">你输入的信息是正确的</span>
+  <span class="glyphiconglyphicon-ok form-control-feedback"></span>
+</div>
+  …
+</form>
+```
+##按钮
+###基本按钮：`.btn`
+###默认按钮：`.btn-default`
+Bootstrap框架首先通过基础类名“.btn”定义了一个基础的按钮风格，然后通过“.btn-default”定义了一个默认的按钮风格。
+###多标签支持：
+一般制作按钮除了使用`<button>`标签元素之外，还可以使用`<input type="submit">`和`<a>`标签等。同样，在Bootstrap框架中制作按钮时，除了刚才所说的这些标签元素之外，还可以使用在其他的标签元素上，唯一需要注意的是，要在制作按钮的标签元素上添加类名“btn”。如果不添加是不会有任何按钮效果。
+注意⚠️：虽然在Bootstrap框架中使用任何标签元素都可以实现按钮风格，但个人并不建议这样使用，为了避免浏览器兼容性问题，个人强烈建议使用`button`或`a`标签来制作按钮。
+###定制风格：
+在Bootstrap框架中不同的按钮风格都是通过不同的类名来实现，在使用过程中，开发者只需要选择不同的类名即可：
+![](http://img.mukewang.com/53b367bd0001d59c07530312.jpg)
+![](http://img.mukewang.com/53b367d10001846a08020810.jpg)
+###按钮大小：
+在Bootstrap框架中提供了三个类名来控制按钮大小：
+![](http://img.mukewang.com/53b36a7600014af106910605.jpg)
+###块状按钮：`.btn-block`
+按钮宽度充满整个父容器（width:100%）
+Bootstrap框架中提供了一个类名“btn-block”。按钮使用这个类名就可以让按钮充满整个容器，并且这个按钮不会有任何的padding和margin值。在实际当中，常把这种按钮称为块状按钮。
+###按钮状态:
+在Bootstrap框架中针对按钮的状态效果主要分为两种：活动状态和禁用状态。
+1. 活动状态:
+Bootstrap按钮的活动状态主要包括按钮的悬浮状态(:hover)，点击状态(:active)和焦点状态（:focus）几种。
+2. 禁用状态:
+在Bootstrap框架中，要禁用按钮有两种实现方式：
+方法1：在标签中添加disabled属性
+方法2：在元素标签中添加类名“disabled”
+两者的主要区别是：
+“`.disabled`”样式不会禁止按钮的默认行为，比如说提交和重置行为等。如果想要让这样的禁用按钮也能禁止按钮的默认行为，则需要通过JavaScript这样的语言来处理。对于`<a>`标签也存在类似问题，如果通过类名“`.disable`”来禁用按钮，其链接行为是无法禁止。而在元素标签中添加“`disabled`”属性的方法是可以禁止元素的默认行为的。
+###图像：
+在Bootstrap框架中对于图像的样式风格提供以下几种风格：
+1. img-responsive：响应式图片，主要针对于响应式设计
+2. img-rounded：圆角图片
+3. img-circle：圆形图片
+4. img-thumbnail：缩略图片
+使用方法非常简单，只需要在<img>标签上添加对应的类名
+###图标：
+在Bootstrap框架中也为大家提供了近200个不同的icon图片，而这些图标都是使用CSS3的@font-face属性配合字体来实现的icon效果。
+![](http://img.mukewang.com/53db0e5b0001aff810560855.jpg)
+在网页中使用图标也非常的简单，在任何内联元素上应用所对应的样式即可：
+```html
+<span class="glyphicon glyphicon-search"></span>
+<span class="glyphicon glyphicon-asterisk"></span>
+<span class="glyphicon glyphicon-plus"></span>
+<span class="glyphicon glyphicon-cloud"></span>
+```
+##网格系统：
+###实现原理：
+网格系统的实现原理非常简单，仅仅是通过定义容器大小，平分12份(也有平分成24份或32份，但12份是最常见的)，再调整内外边距，最后结合媒体查询，就制作出了强大的响应式网格系统。Bootstrap框架中的网格系统就是将容器平分成12份。
+###工作原理：
+Bootstrap框架的网格系统工作原理如下：
+1. 数据行(`.row`)必须包含在容器（`.container`）中，以便为其赋予合适的对齐方式和内距(padding)。如：
+```html
+<div class="container">
+<div class="row"></div>
+</div>
+```
+2. 在行(`.row`)中可以添加列(`.column`)，但列数之和不能超过平分的总列数，比如12。如：
+```html
+<div class="container">
+<div class="row">
+<div class="col-md-4"></div>
+<div class="col-md-8"></div>
+```
+3. 具体内容应当放置在列容器（`column`）之内，而且只有列（`column`）才可以作为行容器(`.row`)的直接子元素
+4. 通过设置内距（`padding`）从而创建列与列之间的间距。然后通过为第一列和最后一列设置负值的外距（`margin`）来抵消内距(`padding`)的影响
+###基本用法：
+屏幕尺寸：
+![](http://img.mukewang.com/53e483500001c7f408770494.jpg)
+1. 列组合
+列组合简单理解就是更改数字来合并列（原则：列总和数不能超12），有点类似于表格的colspan属性，例如：
+```html
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">.col-md-4</div>
+    <div class="col-md-8">.col-md-8</div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">.col-md-4</div>
+    <div class="col-md-4">.col-md-4</div>
+    <div class="col-md-4">.col-md-4</div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">.col-md-3</div>
+    <div class="col-md-6">.col-md-6</div>
+    <div class="col-md-3">.col-md-3</div>
+ </div>
+</div>
+```
+2. 列偏移：
+有的时候，我们不希望相邻的两个列紧靠在一起，但又不想使用margin或者其他的技术手段来。这个时候就可以使用列偏移（offset）功能来实现。使用列偏移也非常简单，只需要在列元素上添加类名“col-md-offset-*”(其中星号代表要偏移的列组合数)，那么具有这个类名的列就会向右偏移。例如，你在列元素上添加“col-md-offset-4”，表示该列向右移动4个列的宽度。
+
+```html
+<div class="container">
+<div class="row">
+<div class="col-md-4">.col-md-4</div>
+<div class="col-md-2 col-md-offset-4">列向右移动四列的间距</div>
+<div class="col-md-2">.col-md-3</div>
+</div>
+<div class="row">
+<div class="col-md-4">.col-md-4</div>
+<div class="col-md-4 col-md-offset-4">列向右移动四列的间距</div>
+</div>
+</div>
+```
+3.列排序：
+列排序其实就是改变列的方向，就是改变左右浮动，并且设置浮动的距离。在Bootstrap框架的网格系统中是通过添加类名“`col-md-push-*`(向右移动)”和“`col-md-pull-*`(向左移动)” (其中星号代表移动的列组合数)。
+```html
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 col-sm-push-8">.col-sm-4</div>
+    <div class="col-sm-8 col-sm-pull-4">.col-sm-8</div>
+  </div>
+</div>
+```
+结果：.col-sm-4和.col-sm-8交换位置
+4. 列的嵌套：
+Bootstrap框架的网格系统还支持列的嵌套。你可以在一个列中添加一个或者多个行（row）容器，然后在这个行容器中插入列（像前面介绍的一样使用列）。但在列容器中的行容器（row），宽度为100%时，就是当前外部列的宽度。
+```html
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8">col-sm-8
+            <div class="row">
+                <div class="col-sm-8">col-sm-8</div>
+                <div class="col-sm-4">col-sm-4</div>
+            </div>
+        </div>
+        <div class="col-sm-4">col-sm-4
+                        <div class="row">
+                <div class="col-sm-9">col-sm-9</div>
+                <div class="col-sm-3">col-sm-3</div>
+            </div>
+        </div>
+    </div>
+</div>
+```
+注意：嵌套的列总数也需要遵循不超过12列。不然会造成末位列换行显示。
+##下拉菜单：
+使用方法：
+在使用Bootstrap框架中的下拉菜单组件时，其结构运用的正确与否非常的重要，如果结构和类名未使用正确，直接影响组件是否能正常运用。我们来简单的看看：
+1. 使用一个名为“dropdown”的容器包裹了整个下拉菜单元素，示例中为:
+`<div class="dropdown"></div>`
+2. 使用了一个<button>按钮做为父菜单，并且定义类名“dropdown-toggle”和自定义“data-toggle”属性，且值必须和最外容器类名一致，此示例为:
+`data-toggle="dropdown"`
+3. 下拉菜单项使用一个ul列表，并且定义一个类名为“dropdown-menu”，此示例为:
+`<ul class="dropdown-menu">`
+示例：
+```html
+<div class="dropdown">
+	<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+	下拉菜单<span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+	   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+	   …
+	   <li role="presentation" class="divider"></li>
+	   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+	</ul>
+</div>
+```
+###下拉菜单分隔线：
+在Bootstrap框架中的下拉菜单还提供了下拉分隔线，假设下拉菜单有两个组，那么组与组之间可以通过添加一个空的`<li>`，并且给这个`<li>`添加类名“`divider`”来实现添加下拉分隔线的功能。
+###下拉菜单标题菜单：
+通过添加“divider”可以将下拉菜单分组，为了让这个分组更明显，还可以给每个组添加一个头部（标题），给`<li>`添加类名“`dropdown-header`”实现下拉菜单标题菜单。
+###下拉菜单对齐方式：
+1. 实现右对齐方法：
+Bootstrap框架中下拉菜单默认是左对齐，如果你想让下拉菜单相对于父容器右对齐时，可以在“dropdown-menu”上添加一个“pull-right”或者“dropdown-menu-right”类名。
+2. 下拉菜单与父容器左边对齐:
+与此同时，还有一个类名刚好与“dropdown-menu-right”相反的类名“dropdown-menu-left”，其效果就是让下拉菜单与父容器左边对齐，其实就是默认效果。
+###下拉菜单菜单项状态：
+下拉菜单项的默认的状态（不用设置）有悬浮状态（:hover）和焦点状态（:focus）；
+下拉菜单项除了上面两种状态，还有当前状态（.active）和禁用状态（.disabled）。这两种状态使用方法只需要在对应的菜单项上添加对应的类名；
+###向上谈起下拉菜单：
+在Bootstrap框架中专门为这种效果提代了一个类名“dropup”；
+
+```html
+<div class="dropdown dropup">
+    <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">按钮下拉菜单<span class="caret"></span></button>
+    <ul class="dropdown-menu">
+         <li><a href="##">按钮下拉菜单项</a></li>
+         <li><a href="##">按钮下拉菜单项</a></li>
+         <li><a href="##">按钮下拉菜单项</a></li>
+         <li><a href="##">按钮下拉菜单项</a></li>
+    </ul>
+</div>
+```
+##按钮组：
+对于结构方面，非常的简单。使用一个名为“btn-group”的容器，把多个按钮放到这个容器中。
+
+```html
+	<div class="btn-group">
+	  <button type="button" class="btn btn-default">
+	     <span class="glyphicon glyphicon-step-backward"></span>
+	  </button>
+	   …
+	  <button type="button" class="btn btn-default">
+	     <span class="glyphicon glyphicon-step-forward"></span>
+	  </button>
+	</div>
+```
+###按钮组（按钮工具栏）：
+你只需要将按钮组“btn-group”按组放在一个大的容器“btn-toolbar”中，如下所示：
+
+```html
+	<div class="btn-toolbar">
+	  <div class="btn-group">
+	    …
+	  </div>
+	  <div class="btn-group">
+	    …
+	  </div>
+	  <div class="btn-group">
+	    …
+	  </div>
+	  <div class="btn-group">
+	    …
+	  </div>
+	</div>
+```
+按钮组大小设置
+
+在介绍按钮一节中，我们知道按钮是通过btn-lg、btn-sm和btn-xs三个类名来调整padding、font-size、line-height和border-radius属性值来改变按钮大小。那么按钮组的大小，我们也可以通过类似的方法：
+
+  ☑  .btn-group-lg:大按钮组
+
+  ☑  .btn-group-sm:小按钮组
+
+  ☑  .btn-group-xs:超小按钮组
+
+只需要在“.btn-group”类名上追加对应的类名，就可以得到不同大小的按钮组。
+
+###按钮组 嵌套分组：
+很多时候，我们常把下拉菜单和普通的按钮组排列在一起，实现类似于导航菜单的效果。
+使用的时候，只需要把当初制作下拉菜单的“dropdown”的容器换成“btn-group”，并且和普通的按钮放在同一级。
+例如：
+
+```html
+	<div class="btn-group">
+	<button class="btnbtn-default" type="button">首页</button>
+	<button class="btnbtn-default" type="button">产品展示</button>
+	<button class="btnbtn-default" type="button">案例分析</button>
+	<button class="btnbtn-default" type="button">联系我们</button>
+	<div class="btn-group">
+	   <button class="btnbtn-default dropdown-toggle" data-toggle="dropdown" type="button">关于我们<span class="caret"></span></button>
+	   <ul class="dropdown-menu">
+	         <li><a href="##">公司简介</a></li>
+	         <li><a href="##">企业文化</a></li>
+	         <li><a href="##">组织结构</a></li>
+	         <li><a href="##">客服服务</a></li>
+	    </ul>
+	</div>
+	</div>
+```
+###按钮组 垂直分组：
+在实际运用当中，总会碰到垂直显示的效果。在Bootstrap框架中也提供了这样的风格。我们只需要把水平分组的“btn-group”类名换成“btn-group-vertical”即可。
+
+```html
+	<div class="btn-group-vertical">
+	<button class="btnbtn-default" type="button">首页</button>
+	<button class="btnbtn-default" type="button">产品展示</button>
+	<button class="btnbtn-default" type="button">案例分析</button>
+	<button class="btnbtn-default" type="button">联系我们</button>
+	<div class="btn-group">
+	   <button class="btnbtn-default dropdown-toggle" data-toggle="dropdown" type="button">关于我们<span class="caret"></span></button>
+	   <ul class="dropdown-menu">
+	      <li><a href="##">公司简介</a></li>
+	      <li><a href="##">企业文化</a></li>
+	      <li><a href="##">组织结构</a></li>
+	      <li><a href="##">客服服务</a></li>
+	</ul>
+	</div>
+	</div>
+```
+###按钮组 等分按钮：
+等分按钮也常被称为是自适应分组按钮，其实现方法也非常的简单，只需要在按钮组“btn-group”上追加一个“btn-group-justified”类名
+
+```html
+	<div class="btn-wrap">
+	<div class="btn-group btn-group-justified">
+	  <a class="btnbtn-default" href="#">首页</a>
+	  <a class="btnbtn-default" href="#">产品展示</a>
+	  <a class="btnbtn-default" href="#">案例分析</a>
+	  <a class="btnbtn-default" href="#">联系我们</a>
+	</div>
+	</div>
+```
+##导航：
+###导航 基础样式：
+Bootstrap框架中制作导航条主要通过“.nav”样式。默认的“.nav”样式不提供默认的导航样式，必须附加另外一个样式才会有效，比如“nav-tabs”、“nav-pills”之类。
+###导航（标签形tab导航）:
+标签形导航，也称为选项卡导航。特别是在很多内容分块显示的时，使用这种选项卡来分组十分适合。
+
+标签形导航是通过“nav-tabs”样式来实现。在制作标签形导航时需要在原导航“nav”上追加此类名，如：
+
+```html
+	<ul class="nav nav-tabs">
+	     <li><a href="##">Home</a></li>
+	     <li><a href="##">CSS3</a></li>
+	     <li><a href="##">Sass</a></li>
+	     <li><a href="##">jQuery</a></li>
+	     <li><a href="##">Responsive</a></li>
+	</ul>
+```
+
+###导航（胶囊形(pills)导航）：
+胶囊形（pills）导航听起来有点别扭，因为其外形看起来有点像胶囊形状。但其更像我们平时看到的大众形导航。当前项高亮显示，并带有圆角效果。其实现方法和“nav-tabs”类似，同样的结构，只需要把类名“nav-tabs”换成“nav-pills”
+
+```html
+	<ul class="nav nav-pills">
+	      <li class="active"><a href="##">Home</a></li>
+	      <li><a href="##">CSS3</a></li>
+	      <li><a href="##">Sass</a></li>
+	      <li><a href="##">jQuery</a></li>
+	      <li class="disabled"><a href="##">Responsive</a></li>
+	</ul>
+```
+###导航（垂直堆叠的导航）：
+在实际运用当中，除了水平导航之外，还有垂直导航，就类似前面介绍的垂直排列按钮一样。制作垂直堆叠导航只需要在“nav-pills”的基础上添加一个“nav-stacked”类名即可。
+
+```html
+	<ul class="nav nav-pills nav-stacked">
+	     <li class="active"><a href="##">Home</a></li>
+	     <li><a href="##">CSS3</a></li>
+	     <li><a href="##">Sass</a></li>
+	     <li><a href="##">jQuery</a></li>
+	     <li class="disabled"><a href="##">Responsive</a></li>
+	</ul>
+```
+
+###自适应导航:
+自适应导航使用`.nav-justified`，它需要和`.nav-tabs`或`.nav-pills`配合使用。
+###面包屑式导航：
+面包屑(Breadcrumb)一般用于导航，主要是起的作用是告诉用户现在所处页面的位置（当前位置）。在Bootstrap框架中面包屑也是一个独立模块组件：
+使用方法：
+使用方式就很简单，为ol加入breadcrumb类：
+
+```html
+    <ol class="breadcrumb">
+    <li><a href="#">首页</a></li>
+    <li><a href="#">我的书</a></li>
+    <li class="active">《图解CSS3》</li>
+    </ol>
+```
+
+##导航条:`navbar`
+###基础导航条：
+
+使用方法：
+
+在制作一个基础导航条时，主要分以下几步：
+
+第一步：首先在制作导航的列表(`<ul class=”nav”>`)基础上添加类名“navbar-nav”
+
+第二步：在列表外部添加一个容器（div），并且使用类名“navbar”和“navbar-default”
+###为导航条添加标题、二级菜单及状态:
+在`navbar`里使用`navbar-header`和`navbar-brand`来实现。
+示例代码：
+
+```html
+	<div class="navbar navbar-default">
+		<div class="navbar-header">
+			<a class="navbar-brand">导航标题</a>
+		</div>
+	</div>
+```
+
+
