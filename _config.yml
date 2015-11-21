@@ -1,3 +1,5 @@
+auto: true
+paginate: 8
 baseurl: /wiyt.github.io
 pygments: true
 markdown: redcarpet
@@ -10,3 +12,20 @@ redcarpet:
     - fenced_code_blocks
 kramdown:
   input: GFM
+defaults:
+  -
+    scope:
+      path: "blogs"
+      type: "pages"
+    values:
+      layout: "default"
+      author: "wiyt"
+      category: "blogs"
+  -
+      scope:
+      path: "opinion"
+      type: "pages"
+    values:
+      layout: "default"
+      author: "wiyt"
+      category: "opinion"
