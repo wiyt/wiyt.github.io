@@ -12,4 +12,4 @@ redcarpet:
     - fenced_code_blocks
 kramdown:
   input: GFM
-permalink: http://wiyt.github.io/_posts/:year/:month/:day/:title
+permalink: wiyt.github.io/_posts/:year/:month/:day/:title
