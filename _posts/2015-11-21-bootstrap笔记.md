@@ -1,4 +1,8 @@
-# ##强调相关的类
+---
+layout: default
+title: bootstrap笔记
+---
+##强调相关的类
 `.text-muted`：提示，使用浅灰色（#999）
 `.text-primary`：主要，使用蓝色（#428bca）
 `.text-success`：成功，使用浅绿色(#3c763d)
@@ -48,6 +52,7 @@ Bootstrap框架默认的表单是垂直显示风格
 2、checkbox连同label标签放置在一个名为“.checkbox”的容器内
 3、radio连同label标签放置在一个名为“.radio”的容器内
 在Bootstrap框架中，主要借助“.checkbox”和“.radio”样式，来处理复选框、单选按钮与标签的对齐方式。源码请查看bootstrap.css文件第1742行～第1762行
+
 ```html
 <form role="form">
 	<div class="checkbox">
@@ -70,20 +75,21 @@ Bootstrap框架默认的表单是垂直显示风格
 ###表单控件(复选框和单选按钮水平排列)
 1、如果checkbox需要水平排列，只需要在label标签上添加类名“checkbox-inline”
 2、如果radio需要水平排列，只需要在label标签上添加类名“radio-inline”
+
 ```html
-	<form role="form">
-	<div class="form-group">
-	    <label class="radio-inline">
-	        <input type="radio" value="option1"/>男性
-	    </label>
-	        <label class="radio-inline">
-	        <input type="radio" value="option2"/>女性
-	    </label>
-	        <label class="radio-inline">
-	        <input type="radio" value="option3"/>中性
-	    </label>
-	    </div>
-	</form>
+<form role="form">
+<div class="form-group">
+    <label class="radio-inline">
+        <input type="radio" value="option1"/>男性
+    </label>
+        <label class="radio-inline">
+        <input type="radio" value="option2"/>女性
+    </label>
+        <label class="radio-inline">
+        <input type="radio" value="option3"/>中性
+    </label>
+    </div>
+</form>
 ```
 ###表单控件的大小
 1. input-sm:让控件比正常大小更小
@@ -187,12 +193,14 @@ Bootstrap按钮的活动状态主要包括按钮的悬浮状态(:hover)，点击
 ###工作原理：
 Bootstrap框架的网格系统工作原理如下：
 1. 数据行(`.row`)必须包含在容器（`.container`）中，以便为其赋予合适的对齐方式和内距(padding)。如：
+
 ```html
 <div class="container">
 <div class="row"></div>
 </div>
 ```
 2. 在行(`.row`)中可以添加列(`.column`)，但列数之和不能超过平分的总列数，比如12。如：
+
 ```html
 <div class="container">
 <div class="row">
@@ -206,6 +214,7 @@ Bootstrap框架的网格系统工作原理如下：
 ![](http://img.mukewang.com/53e483500001c7f408770494.jpg)
 1. 列组合
 列组合简单理解就是更改数字来合并列（原则：列总和数不能超12），有点类似于表格的colspan属性，例如：
+
 ```html
 <div class="container">
   <div class="row">
@@ -242,6 +251,7 @@ Bootstrap框架的网格系统工作原理如下：
 ```
 3.列排序：
 列排序其实就是改变列的方向，就是改变左右浮动，并且设置浮动的距离。在Bootstrap框架的网格系统中是通过添加类名“`col-md-push-*`(向右移动)”和“`col-md-pull-*`(向左移动)” (其中星号代表移动的列组合数)。
+
 ```html
 <div class="container">
   <div class="row">
@@ -253,6 +263,7 @@ Bootstrap框架的网格系统工作原理如下：
 结果：.col-sm-4和.col-sm-8交换位置
 4. 列的嵌套：
 Bootstrap框架的网格系统还支持列的嵌套。你可以在一个列中添加一个或者多个行（row）容器，然后在这个行容器中插入列（像前面介绍的一样使用列）。但在列容器中的行容器（row），宽度为100%时，就是当前外部列的宽度。
+
 ```html
 <div class="container">
     <div class="row">
@@ -277,11 +288,12 @@ Bootstrap框架的网格系统还支持列的嵌套。你可以在一个列中�
 在使用Bootstrap框架中的下拉菜单组件时，其结构运用的正确与否非常的重要，如果结构和类名未使用正确，直接影响组件是否能正常运用。我们来简单的看看：
 1. 使用一个名为“dropdown”的容器包裹了整个下拉菜单元素，示例中为:
 `<div class="dropdown"></div>`
-2. 使用了一个<button>按钮做为父菜单，并且定义类名“dropdown-toggle”和自定义“data-toggle”属性，且值必须和最外容器类名一致，此示例为:
+2. 使用了一个`<button>`按钮做为父菜单，并且定义类名“dropdown-toggle”和自定义“data-toggle”属性，且值必须和最外容器类名一致，此示例为:
 `data-toggle="dropdown"`
 3. 下拉菜单项使用一个ul列表，并且定义一个类名为“dropdown-menu”，此示例为:
 `<ul class="dropdown-menu">`
 示例：
+
 ```html
 <div class="dropdown">
 	<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
