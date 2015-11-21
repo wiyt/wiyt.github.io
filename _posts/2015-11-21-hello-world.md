@@ -1,6 +1,7 @@
 ---
 layout: default
 title: test page
+category: think
 ---
 ###这是测试页面
 ```javascript
