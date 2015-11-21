@@ -22,7 +22,7 @@ defaults:
       author: "wiyt"
       category: "blogs"
   -
-      scope:
+    scope:
       path: "opinion"
       type: "pages"
     values:
