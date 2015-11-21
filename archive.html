@@ -1,1 +1,10 @@
-archive.html
+---
+layout: default
+title: Archive
+---
+<h3>全部文章：</h3>
+<ul>
+　　{% for post in site.posts %}
+　　<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+　　{% endfor %}
+</ul>
