@@ -181,6 +181,7 @@ Bootstrap按钮的活动状态主要包括按钮的悬浮状态(:hover)，点击
 在Bootstrap框架中也为大家提供了近200个不同的icon图片，而这些图标都是使用CSS3的@font-face属性配合字体来实现的icon效果。
 ![](http://img.mukewang.com/53db0e5b0001aff810560855.jpg)
 在网页中使用图标也非常的简单，在任何内联元素上应用所对应的样式即可：
+
 ```html
 <span class="glyphicon glyphicon-search"></span>
 <span class="glyphicon glyphicon-asterisk"></span>
