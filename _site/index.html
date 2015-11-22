@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>『幽窗孤灯』</title>
+	<!-- 上线用 -->
+	<link href="/css/prism.css" rel="stylesheet" type="text/css" />
+	<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<script src="/js/jquery-2.1.4.min.js" type="text/javascript"></script>
+	
+	<!-- 测试用 -->
+<!-- 	<link href="../css/prism.css" rel="stylesheet" type="text/css" />
+	<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" /> -->
+	<style type="text/css">
+		*{
+			box-sizing:border-box;
+		}
+		.sidebar{
+			background-color: #202020;
+			padding:35px;
+		}
+		body{
+			background-color:#E8E8E8;
+		}
+		.col-sm-9{
+			background-color:#fff;
+		}
+		html,body,.container,.row,.col-sm-3,.sidebar{
+				height:100%;
+		}
+		.head{
+			text-align: left;
+			/*border-bottom: 1px solid #EEE;*/
+			padding:20px;
+		}
+		.sidebar p{
+			color:#fff;
+		}
+		img{
+			width:100%;
+		}
+		.content{
+			margin-top: 10px;
+    	padding: 25px;
+		}
+	</style>
+	</head>
+	<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-3">
+				<div class="sidebar" id="sidebar">
+					<div class="head">
+						<h3 class="head-title"><a href="/">『幽窗孤灯』</a></h3>
+					</div>
+					<p>
+						『去爱！』
+					</p>
+					<p>
+						 『去生活！』
+					</p>
+					<p>
+						 『我自凌风飞扬！』
+					</p>
+					<div class="sidebar-nav">
+						<ul class="nav nav-pills nav-stacked">
+								<li class="nav-divider"></li>
+								<li class="sidebar-nav-item"><a href="/" class="">主页</a></li>
+								<li class="nav-divider"></li>
+								<li class="sidebar-nav-item"><a href="/archive.html" class="">文章归档</a></li>
+								<li class="nav-divider"></li>
+								<li class="sidebar-nav-item"><a href="/categories.html" class="">文章分类</a></li>
+								<li class="nav-divider"></li>
+								<li class="sidebar-nav-item"><a href="/about.html" class="">关于我</a></li>
+								<li class="nav-divider"></li>
+								<li class="sidebar-nav-item"><a href="https://github.com/wiyt" class="">My github</a></li>
+								<li class="nav-divider"></li>
+						</ul>
+					</div>
+					<p>『© 2015. All rights reserved.』</p>
+				</div>
+			</div>
+			<div class="col-sm-9">
+				<div class="wrap">
+					<div class="content">
+						<div class="posts">
+										<h3>最新文章：</h3>
+<hr>
+<ul>
+<!-- 　　
+　　<li>22 Nov 2015 <a href="/test/2015/11/22/hello-world">hello world</a></li>
+　　
+　　<li>21 Nov 2015 <a href="/html/2015/11/21/html%E7%AC%94%E8%AE%B0">html笔记</a></li>
+　　
+　　<li>21 Nov 2015 <a href="/css/2015/11/21/css%E7%AC%94%E8%AE%B0">css笔记</a></li>
+　　
+　　<li>21 Nov 2015 <a href="/bootstrap/2015/11/21/bootstrap%E7%AC%94%E8%AE%B0">bootstrap笔记</a></li>
+　　
+
+	<ul> -->
+  
+    <li>
+      <h4><a href="/test/2015/11/22/hello-world">hello world</a></h4>
+      <!-- <p>
+</p> -->
+    </li>
+  
+    <li>
+      <h4><a href="/html/2015/11/21/html%E7%AC%94%E8%AE%B0">html笔记</a></h4>
+      <!-- <p><h2 id="html-">HTML 标签</h2>
+<p>###引用：</p>
+
+</p> -->
+    </li>
+  
+    <li>
+      <h4><a href="/css/2015/11/21/css%E7%AC%94%E8%AE%B0">css笔记</a></h4>
+      <!-- <p><h2 id="css">CSS</h2>
+<p>### 选择器
+1.标签选择器 <code>p{color:red;}</code>
+2.类选择器 <code>.class{color:red}</code> <br />
+3.id选择器 <code>#id{color:red} </code><br />
+4.子选择器 <code>p&gt;a{color:red}</code>  <br />
+5.包含（后代）选择器 <code>p a{color:red}</code>
+6.通用选择器 <code>*{color:red}</code>  <br />
+7.伪类选择器 <code>a:hover{color:red}</code>  <br />
+8.分组选择器 <code>a,p{color:red}</code>  <br />
+### 继承
+不可继承的：</p>
+
+</p> -->
+    </li>
+  
+    <li>
+      <h4><a href="/bootstrap/2015/11/21/bootstrap%E7%AC%94%E8%AE%B0">bootstrap笔记</a></h4>
+      <!-- <p><h2 id="section">强调相关的类</h2>
+<p><code>.text-muted</code>：提示，使用浅灰色（#999）
+<code>.text-primary</code>：主要，使用蓝色（#428bca）
+<code>.text-success</code>：成功，使用浅绿色(#3c763d)
+<code>.text-info</code>：通知信息，使用浅蓝色（#31708f）
+<code>.text-warning</code>：警告，使用黄色（#8a6d3b）
+<code>.text-danger</code>：危险，使用褐色（#a94442）
+##控制文本对齐风格
+<code>.text-left</code>：左对齐
+<code>.text-center</code>：居中对齐
+<code>.text-right</code>：右对齐
+<code>.text-justify</code>：两端对齐
+##bootstrap 列表
+<code>.list-unstyled</code>：去点、去编号列表
+<code>.list-inline</code>：内联列表
+<code>.dl-horizontal</code>：水平定义列表
+## 代码
+在Bootstrap主要提供了三种代码风格：
+1. 使用<code>&lt;code&gt;&lt;/code&gt;</code>来显示单行内联代码；一般是针对于单个单词或单个句子的代码
+2. 使用<code>&lt;pre&gt;&lt;/pre&gt;</code>来显示多行块代码； 一般是针对于多行代码（也就是成块的代码）
+3. 使用<code>&lt;kbd&gt;&lt;/kbd&gt;</code>来显示用户输入代码； 一般是表示用户要通过键盘输入的内容
+.pre-scrollable 代码块区域最大高度为340px，一旦超出这个高度，就会在Y轴出现滚动条。
+##表格
+Bootstrap为表格不同的样式风格提供了不同的类名，主要包括：
+<code>.table</code>：基础表格
+<code>.table-striped</code>：斑马线表格
+<code>.table-bordered</code>：带边框的表格
+<code>.table-hover</code>：鼠标悬停高亮的表格
+<code>.table-condensed</code>：紧凑型表格
+<code>.table-responsive</code>：响应式表格<br />
+Bootstrap还为表格的行元素<code>&lt;tr&gt;</code>提供了五种不同的类名，每种类名控制了行的不同背景颜色，具体说明如下表所示：
+<img src="http://img.mukewang.com/53ad213f0001b08807340508.jpg" alt="" />
+注意⚠️：
+1. 无论设置什么表格都要带有基础表格<code>.table</code>
+2. 响应式表格要提供一个容器<code>.table-responsive</code>
+##表单
+Bootstrap框架默认的表单是垂直显示风格
+控价要放在一个类名为<code>.form-group</code>容器里；控件需要使用<code>.form-control</code>类名
+### 水平表单：标签居左，表单控件居右
+在Bootstrap框架中要实现水平表单效果，必须满足以下两个条件：
+1. 在<code>form</code>元素使用类名<code>.form-horizontal</code>
+2. 配合bootstrap框架的网格系统
+###内联表单：表单控件都在一行内显示
+<code>.form-inline</code>
+###表单控件（单选按钮<code>radio</code>、复选框<code>checkbox</code>）
+解决<code>radio</code>、<code>checkbox</code>和<code>label</code>配合使用时出现的对齐问题。
+1、不管是checkbox还是radio都使用label包起来了
+2、checkbox连同label标签放置在一个名为“.checkbox”的容器内
+3、radio连同label标签放置在一个名为“.radio”的容器内
+在Bootstrap框架中，主要借助“.checkbox”和“.radio”样式，来处理复选框、单选按钮与标签的对齐方式。源码请查看bootstrap.css文件第1742行～第1762行</p>
+
+</p> -->
+    </li>
+  
+	</ul>
+</ul>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		<script src="/js/prism.js" type="text/javascript"></script>
+		<!--<script src="/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>-->
+		<script>
+			var navitem = document.querySelectorAll(".sidebar-nav-item");
+			for(var i = 0; i < navitem.length; i++){
+				navitem[i].addEventListener("click",active);
+			}
+			function active(){
+				for(var i = 0; i < navitem.length; i++){
+					navitem[i].className = "sidebar-nav-item";
+				}
+				this.className = "sidebar-nav-item active"
+			}
+		</script>
+	</body>
+</html>

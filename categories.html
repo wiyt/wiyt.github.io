@@ -4,7 +4,8 @@ title: 『幽窗孤灯』
 ---
 
 <h3>文章分类·Categories</h3>
-<ul class="artical-list">
+<hr>
+<!-- <ul class="artical-list">
 
 <ul>
 	<li>
@@ -48,8 +49,34 @@ title: 『幽窗孤灯』
 	</li>
 </ul>
 </ul>
+</ul> -->
+{% include JB/setup %}
+
+<ul class="tag_box inline">
+  {% assign categories_list = site.categories %}
+  {% include JB/categories_list %}
 </ul>
+
+
+{% for category in site.categories %} 
+  <h2 id="{{ category[0] }}-ref">{{ category[0] | join: "/" }}</h2>
+  <ul>
+    {% assign pages_list = category[1] %}  
+    {% include JB/pages_list %}
+  </ul>
+{% endfor %}
 <script>
 	var navitem = document.querySelectorAll(".sidebar-nav-item");
-	navitem[2].className = "sidebar-nav-item active"
+	navitem[2].className = "sidebar-nav-item active";
+	// $(".tag_box").addClass("nav nav-tabs");
+	$(".tag_box li").addClass("label label-primary").css("margin","0 1px");
+	$(".tag_box li a").css("color","#fff");
+	// $(".tag_box li a span").addClass("badge");
+	var span = $(".tag_box li a span");
+	for (var i = span.length - 1; i >= 0; i--) {
+		var jqspan = $(span[i]);
+		var text = jqspan.text();
+		jqspan.html("<sup>"+text+"</sup>");
+		jqspan.children().css({"border":"1px solid black","padding":"2px","background-color": "#337ab7"})
+	}
 </script>

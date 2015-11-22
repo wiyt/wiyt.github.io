@@ -1,128 +1,208 @@
----
-layout: post
-title: bootstrap笔记
-category: ["bootstrap"]
-tags: ["bootstrap,code"]
----
-##强调相关的类
-`.text-muted`：提示，使用浅灰色（#999）
-`.text-primary`：主要，使用蓝色（#428bca）
-`.text-success`：成功，使用浅绿色(#3c763d)
-`.text-info`：通知信息，使用浅蓝色（#31708f）
-`.text-warning`：警告，使用黄色（#8a6d3b）
-`.text-danger`：危险，使用褐色（#a94442）
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>bootstrap笔记</title>
+	<!-- 上线用 -->
+	<link href="/css/prism.css" rel="stylesheet" type="text/css" />
+	<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<script src="/js/jquery-2.1.4.min.js" type="text/javascript"></script>
+	
+	<!-- 测试用 -->
+<!-- 	<link href="../css/prism.css" rel="stylesheet" type="text/css" />
+	<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" /> -->
+	<style type="text/css">
+		*{
+			box-sizing:border-box;
+		}
+		.sidebar{
+			background-color: #202020;
+			padding:35px;
+		}
+		body{
+			background-color:#E8E8E8;
+		}
+		.col-sm-9{
+			background-color:#fff;
+		}
+		html,body,.container,.row,.col-sm-3,.sidebar{
+				height:100%;
+		}
+		.head{
+			text-align: left;
+			/*border-bottom: 1px solid #EEE;*/
+			padding:20px;
+		}
+		.sidebar p{
+			color:#fff;
+		}
+		img{
+			width:100%;
+		}
+		.content{
+			margin-top: 10px;
+    	padding: 25px;
+		}
+	</style>
+	</head>
+	<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-3">
+				<div class="sidebar" id="sidebar">
+					<div class="head">
+						<h3 class="head-title"><a href="/">『幽窗孤灯』</a></h3>
+					</div>
+					<p>
+						『去爱！』
+					</p>
+					<p>
+						 『去生活！』
+					</p>
+					<p>
+						 『我自凌风飞扬！』
+					</p>
+					<div class="sidebar-nav">
+						<ul class="nav nav-pills nav-stacked">
+								<li class="nav-divider"></li>
+								<li class="sidebar-nav-item"><a href="/" class="">主页</a></li>
+								<li class="nav-divider"></li>
+								<li class="sidebar-nav-item"><a href="/archive.html" class="">文章归档</a></li>
+								<li class="nav-divider"></li>
+								<li class="sidebar-nav-item"><a href="/categories.html" class="">文章分类</a></li>
+								<li class="nav-divider"></li>
+								<li class="sidebar-nav-item"><a href="/about.html" class="">关于我</a></li>
+								<li class="nav-divider"></li>
+								<li class="sidebar-nav-item"><a href="https://github.com/wiyt" class="">My github</a></li>
+								<li class="nav-divider"></li>
+						</ul>
+					</div>
+					<p>『© 2015. All rights reserved.』</p>
+				</div>
+			</div>
+			<div class="col-sm-9">
+				<div class="wrap">
+					<div class="content">
+						<div class="posts">
+										<h2 id="section">强调相关的类</h2>
+<p><code>.text-muted</code>：提示，使用浅灰色（#999）
+<code>.text-primary</code>：主要，使用蓝色（#428bca）
+<code>.text-success</code>：成功，使用浅绿色(#3c763d)
+<code>.text-info</code>：通知信息，使用浅蓝色（#31708f）
+<code>.text-warning</code>：警告，使用黄色（#8a6d3b）
+<code>.text-danger</code>：危险，使用褐色（#a94442）
 ##控制文本对齐风格
-`.text-left`：左对齐
-`.text-center`：居中对齐
-`.text-right`：右对齐
-`.text-justify`：两端对齐
+<code>.text-left</code>：左对齐
+<code>.text-center</code>：居中对齐
+<code>.text-right</code>：右对齐
+<code>.text-justify</code>：两端对齐
 ##bootstrap 列表
-`.list-unstyled`：去点、去编号列表
-`.list-inline`：内联列表
-`.dl-horizontal`：水平定义列表
+<code>.list-unstyled</code>：去点、去编号列表
+<code>.list-inline</code>：内联列表
+<code>.dl-horizontal</code>：水平定义列表
 ## 代码
 在Bootstrap主要提供了三种代码风格：
-1. 使用`<code></code>`来显示单行内联代码；一般是针对于单个单词或单个句子的代码
-2. 使用`<pre></pre>`来显示多行块代码； 一般是针对于多行代码（也就是成块的代码）
-3. 使用`<kbd></kbd>`来显示用户输入代码； 一般是表示用户要通过键盘输入的内容
+1. 使用<code>&lt;code&gt;&lt;/code&gt;</code>来显示单行内联代码；一般是针对于单个单词或单个句子的代码
+2. 使用<code>&lt;pre&gt;&lt;/pre&gt;</code>来显示多行块代码； 一般是针对于多行代码（也就是成块的代码）
+3. 使用<code>&lt;kbd&gt;&lt;/kbd&gt;</code>来显示用户输入代码； 一般是表示用户要通过键盘输入的内容
 .pre-scrollable 代码块区域最大高度为340px，一旦超出这个高度，就会在Y轴出现滚动条。
 ##表格
 Bootstrap为表格不同的样式风格提供了不同的类名，主要包括：
-`.table`：基础表格
-`.table-striped`：斑马线表格
-`.table-bordered`：带边框的表格
-`.table-hover`：鼠标悬停高亮的表格
-`.table-condensed`：紧凑型表格
-`.table-responsive`：响应式表格<br />
-Bootstrap还为表格的行元素`<tr>`提供了五种不同的类名，每种类名控制了行的不同背景颜色，具体说明如下表所示：
-![](http://img.mukewang.com/53ad213f0001b08807340508.jpg)
+<code>.table</code>：基础表格
+<code>.table-striped</code>：斑马线表格
+<code>.table-bordered</code>：带边框的表格
+<code>.table-hover</code>：鼠标悬停高亮的表格
+<code>.table-condensed</code>：紧凑型表格
+<code>.table-responsive</code>：响应式表格<br />
+Bootstrap还为表格的行元素<code>&lt;tr&gt;</code>提供了五种不同的类名，每种类名控制了行的不同背景颜色，具体说明如下表所示：
+<img src="http://img.mukewang.com/53ad213f0001b08807340508.jpg" alt="" />
 注意⚠️：
-1. 无论设置什么表格都要带有基础表格`.table`
-2. 响应式表格要提供一个容器`.table-responsive`
+1. 无论设置什么表格都要带有基础表格<code>.table</code>
+2. 响应式表格要提供一个容器<code>.table-responsive</code>
 ##表单
 Bootstrap框架默认的表单是垂直显示风格
-控价要放在一个类名为`.form-group`容器里；控件需要使用`.form-control`类名
+控价要放在一个类名为<code>.form-group</code>容器里；控件需要使用<code>.form-control</code>类名
 ### 水平表单：标签居左，表单控件居右
 在Bootstrap框架中要实现水平表单效果，必须满足以下两个条件：
-1. 在`form`元素使用类名`.form-horizontal`
+1. 在<code>form</code>元素使用类名<code>.form-horizontal</code>
 2. 配合bootstrap框架的网格系统
 ###内联表单：表单控件都在一行内显示
-`.form-inline`
-###表单控件（单选按钮`radio`、复选框`checkbox`）
-解决`radio`、`checkbox`和`label`配合使用时出现的对齐问题。
+<code>.form-inline</code>
+###表单控件（单选按钮<code>radio</code>、复选框<code>checkbox</code>）
+解决<code>radio</code>、<code>checkbox</code>和<code>label</code>配合使用时出现的对齐问题。
 1、不管是checkbox还是radio都使用label包起来了
 2、checkbox连同label标签放置在一个名为“.checkbox”的容器内
 3、radio连同label标签放置在一个名为“.radio”的容器内
-在Bootstrap框架中，主要借助“.checkbox”和“.radio”样式，来处理复选框、单选按钮与标签的对齐方式。源码请查看bootstrap.css文件第1742行～第1762行
+在Bootstrap框架中，主要借助“.checkbox”和“.radio”样式，来处理复选框、单选按钮与标签的对齐方式。源码请查看bootstrap.css文件第1742行～第1762行</p>
 
-```html
+<p>```html</p>
 <form role="form">
 	<div class="checkbox">
 		<label>
-			<input type="checkbox" value="">记住密码
+			<input type="checkbox" value="" />记住密码
 		</label>
 	</div>
 	<div class="radio">
 		<label>
-			<input type="radio" name="optionsRadios" id="optionsRadios1" value="love" checked>喜欢
+			<input type="radio" name="optionsRadios" id="optionsRadios1" value="love" checked="" />喜欢
 		</label>
 	</div>
 	<div class="radio">
 		<label>
-			<input type="radio" name="optionsRadios" id="optionsRadios2" value="hate">不喜欢
+			<input type="radio" name="optionsRadios" id="optionsRadios2" value="hate" />不喜欢
 		</label>
 	</div>
 </form>
-```
+<p>```
 ###表单控件(复选框和单选按钮水平排列)
 1、如果checkbox需要水平排列，只需要在label标签上添加类名“checkbox-inline”
-2、如果radio需要水平排列，只需要在label标签上添加类名“radio-inline”
+2、如果radio需要水平排列，只需要在label标签上添加类名“radio-inline”</p>
 
-```html
+<p>```html</p>
 <form role="form">
 <div class="form-group">
     <label class="radio-inline">
-        <input type="radio" value="option1"/>男性
+        <input type="radio" value="option1" />男性
     </label>
         <label class="radio-inline">
-        <input type="radio" value="option2"/>女性
+        <input type="radio" value="option2" />女性
     </label>
         <label class="radio-inline">
-        <input type="radio" value="option3"/>中性
+        <input type="radio" value="option3" />中性
     </label>
     </div>
 </form>
-```
+<p><code>
 ###表单控件的大小
 1. input-sm:让控件比正常大小更小
 2. input-lg:让控件比正常大小更大
 这两个类适用于表单中的input，textarea和select控件，具体使用如下：
-```html
-<input class="form-control input-lg" type="text" placeholder="添加.input-lg，控件变大">
-<input class="form-control" type="text" placeholder="正常大小">
-<input class="form-control input-sm" type="text" placeholder="添加.input-sm，控件变小">
+</code>html
+<input class="form-control input-lg" type="text" placeholder="添加.input-lg，控件变大" />
+<input class="form-control" type="text" placeholder="正常大小" />
+<input class="form-control input-sm" type="text" placeholder="添加.input-sm，控件变小" />
 ```
 ###表单控件状态
 1. 禁用状态：
-Bootstrap框架的表单控件的禁用状态和普通的表单禁用状态实现方法是一样的，在相应的表单控件上添加属性“`disabled`”
+Bootstrap框架的表单控件的禁用状态和普通的表单禁用状态实现方法是一样的，在相应的表单控件上添加属性“<code>disabled</code>”
 2. 验证状态：
 在制作表单时，不免要做表单验证。同样也需要提供验证状态样式，在Bootstrap框架中同样提供这几种效果。
-1、`.has-warning`:警告状态（黄色）
-2、`.has-error`：错误状态（红色）
-3、`.has-success`：成功状态（绿色）
-使用的时候只需要在form-group容器上对应添加状态类名。
+1、<code>.has-warning</code>:警告状态（黄色）
+2、<code>.has-error</code>：错误状态（红色）
+3、<code>.has-success</code>：成功状态（绿色）
+使用的时候只需要在form-group容器上对应添加状态类名。</p>
 
-```html
+<p>```html</p>
 <form role="form">
 <div class="form-group has-success">
   <label class="control-label" for="inputSuccess1">成功状态</label>
-  <input type="text" class="form-control" id="inputSuccess1" placeholder="成功状态" >
+  <input type="text" class="form-control" id="inputSuccess1" placeholder="成功状态" />
 </div>
 </form>
-```
-让表单在对应的状态下显示 icon 出来，只需要在对应的状态下添加类名“has-feedback”。请注意，此类名要与“has-error”、“has-warning”和“has-success”在一起：
+<p>```
+让表单在对应的状态下显示 icon 出来，只需要在对应的状态下添加类名“has-feedback”。请注意，此类名要与“has-error”、“has-warning”和“has-success”在一起：</p>
 
-```html
+<p>```html</p>
 <form>
 	  <div class="form-group has-error has-feedback">
 	        <label for="email" class="control-label">email地址</label>
@@ -130,36 +210,36 @@ Bootstrap框架的表单控件的禁用状态和普通的表单禁用状态实�
 	      <span class="glyphicon glyphicon-remove form-control-feedback"></span>
 	  </div>
  </form>
- ```
+<p>```
 3. 表单提示信息
-平常在制作表单验证时，要提供不同的提示信息。在Bootstrap框架中也提供了这样的效果。使用了一个"help-block"样式，将提示信息以块状显示，并且显示在控件底部。
+平常在制作表单验证时，要提供不同的提示信息。在Bootstrap框架中也提供了这样的效果。使用了一个”help-block”样式，将提示信息以块状显示，并且显示在控件底部。</p>
 
-```html
+<p>```html</p>
 <form role="form">
 <div class="form-group has-success has-feedback">
   <label class="control-label" for="inputSuccess1">成功状态</label>
-  <input type="text" class="form-control" id="inputSuccess1" placeholder="成功状态" >
+  <input type="text" class="form-control" id="inputSuccess1" placeholder="成功状态" />
   <span class="help-block">你输入的信息是正确的</span>
   <span class="glyphiconglyphicon-ok form-control-feedback"></span>
 </div>
   …
 </form>
-```
+<p>```
 ##按钮
-###基本按钮：`.btn`
-###默认按钮：`.btn-default`
+###基本按钮：<code>.btn</code>
+###默认按钮：<code>.btn-default</code>
 Bootstrap框架首先通过基础类名“.btn”定义了一个基础的按钮风格，然后通过“.btn-default”定义了一个默认的按钮风格。
 ###多标签支持：
-一般制作按钮除了使用`<button>`标签元素之外，还可以使用`<input type="submit">`和`<a>`标签等。同样，在Bootstrap框架中制作按钮时，除了刚才所说的这些标签元素之外，还可以使用在其他的标签元素上，唯一需要注意的是，要在制作按钮的标签元素上添加类名“btn”。如果不添加是不会有任何按钮效果。
-注意⚠️：虽然在Bootstrap框架中使用任何标签元素都可以实现按钮风格，但个人并不建议这样使用，为了避免浏览器兼容性问题，个人强烈建议使用`button`或`a`标签来制作按钮。
+一般制作按钮除了使用<code>&lt;button&gt;</code>标签元素之外，还可以使用<code>&lt;input type="submit"&gt;</code>和<code>&lt;a&gt;</code>标签等。同样，在Bootstrap框架中制作按钮时，除了刚才所说的这些标签元素之外，还可以使用在其他的标签元素上，唯一需要注意的是，要在制作按钮的标签元素上添加类名“btn”。如果不添加是不会有任何按钮效果。
+注意⚠️：虽然在Bootstrap框架中使用任何标签元素都可以实现按钮风格，但个人并不建议这样使用，为了避免浏览器兼容性问题，个人强烈建议使用<code>button</code>或<code>a</code>标签来制作按钮。
 ###定制风格：
 在Bootstrap框架中不同的按钮风格都是通过不同的类名来实现，在使用过程中，开发者只需要选择不同的类名即可：
-![](http://img.mukewang.com/53b367bd0001d59c07530312.jpg)
-![](http://img.mukewang.com/53b367d10001846a08020810.jpg)
+<img src="http://img.mukewang.com/53b367bd0001d59c07530312.jpg" alt="" />
+<img src="http://img.mukewang.com/53b367d10001846a08020810.jpg" alt="" />
 ###按钮大小：
 在Bootstrap框架中提供了三个类名来控制按钮大小：
-![](http://img.mukewang.com/53b36a7600014af106910605.jpg)
-###块状按钮：`.btn-block`
+<img src="http://img.mukewang.com/53b36a7600014af106910605.jpg" alt="" />
+###块状按钮：<code>.btn-block</code>
 按钮宽度充满整个父容器（width:100%）
 Bootstrap框架中提供了一个类名“btn-block”。按钮使用这个类名就可以让按钮充满整个容器，并且这个按钮不会有任何的padding和margin值。在实际当中，常把这种按钮称为块状按钮。
 ###按钮状态:
@@ -171,40 +251,40 @@ Bootstrap按钮的活动状态主要包括按钮的悬浮状态(:hover)，点击
 方法1：在标签中添加disabled属性
 方法2：在元素标签中添加类名“disabled”
 两者的主要区别是：
-“`.disabled`”样式不会禁止按钮的默认行为，比如说提交和重置行为等。如果想要让这样的禁用按钮也能禁止按钮的默认行为，则需要通过JavaScript这样的语言来处理。对于`<a>`标签也存在类似问题，如果通过类名“`.disable`”来禁用按钮，其链接行为是无法禁止。而在元素标签中添加“`disabled`”属性的方法是可以禁止元素的默认行为的。
+“<code>.disabled</code>”样式不会禁止按钮的默认行为，比如说提交和重置行为等。如果想要让这样的禁用按钮也能禁止按钮的默认行为，则需要通过JavaScript这样的语言来处理。对于<code>&lt;a&gt;</code>标签也存在类似问题，如果通过类名“<code>.disable</code>”来禁用按钮，其链接行为是无法禁止。而在元素标签中添加“<code>disabled</code>”属性的方法是可以禁止元素的默认行为的。
 ###图像：
 在Bootstrap框架中对于图像的样式风格提供以下几种风格：
 1. img-responsive：响应式图片，主要针对于响应式设计
 2. img-rounded：圆角图片
 3. img-circle：圆形图片
 4. img-thumbnail：缩略图片
-使用方法非常简单，只需要在<img>标签上添加对应的类名
+使用方法非常简单，只需要在<img />标签上添加对应的类名
 ###图标：
 在Bootstrap框架中也为大家提供了近200个不同的icon图片，而这些图标都是使用CSS3的@font-face属性配合字体来实现的icon效果。
-![](http://img.mukewang.com/53db0e5b0001aff810560855.jpg)
-在网页中使用图标也非常的简单，在任何内联元素上应用所对应的样式即可：
+<img src="http://img.mukewang.com/53db0e5b0001aff810560855.jpg" alt="" />
+在网页中使用图标也非常的简单，在任何内联元素上应用所对应的样式即可：</p>
 
-```html
-<span class="glyphicon glyphicon-search"></span>
-<span class="glyphicon glyphicon-asterisk"></span>
-<span class="glyphicon glyphicon-plus"></span>
-<span class="glyphicon glyphicon-cloud"></span>
-```
+<p><code>html
+&lt;span class="glyphicon glyphicon-search"&gt;&lt;/span&gt;
+&lt;span class="glyphicon glyphicon-asterisk"&gt;&lt;/span&gt;
+&lt;span class="glyphicon glyphicon-plus"&gt;&lt;/span&gt;
+&lt;span class="glyphicon glyphicon-cloud"&gt;&lt;/span&gt;
+</code>
 ##网格系统：
 ###实现原理：
 网格系统的实现原理非常简单，仅仅是通过定义容器大小，平分12份(也有平分成24份或32份，但12份是最常见的)，再调整内外边距，最后结合媒体查询，就制作出了强大的响应式网格系统。Bootstrap框架中的网格系统就是将容器平分成12份。
 ###工作原理：
 Bootstrap框架的网格系统工作原理如下：
-1. 数据行(`.row`)必须包含在容器（`.container`）中，以便为其赋予合适的对齐方式和内距(padding)。如：
+1. 数据行(<code>.row</code>)必须包含在容器（<code>.container</code>）中，以便为其赋予合适的对齐方式和内距(padding)。如：</p>
 
-```html
+<p>```html</p>
 <div class="container">
 <div class="row"></div>
 </div>
-```
-2. 在行(`.row`)中可以添加列(`.column`)，但列数之和不能超过平分的总列数，比如12。如：
+<p>```
+2. 在行(<code>.row</code>)中可以添加列(<code>.column</code>)，但列数之和不能超过平分的总列数，比如12。如：</p>
 
-```html
+<p>```html</p>
 <div class="container">
 <div class="row">
 <div class="col-md-4"></div>
@@ -501,7 +581,7 @@ Bootstrap框架中制作导航条主要通过“.nav”样式。默认的“.nav
 
 在制作一个基础导航条时，主要分以下几步：
 
-第一步：首先在制作导航的列表(`<ul class=”nav”>`)基础上添加类名“navbar-nav”
+第一步：首先在制作导航的列表(`&lt;ul class=”nav”&gt;`)基础上添加类名“navbar-nav”
 
 第二步：在列表外部添加一个容器（div），并且使用类名“navbar”和“navbar-default”
 ###为导航条添加标题、二级菜单及状态:
@@ -517,3 +597,43 @@ Bootstrap框架中制作导航条主要通过“.nav”样式。默认的“.nav
 ```
 
 
+</li></li></li></ul></button></div></div>
+
+<!-- 多说评论框 start -->
+<div class="ds-thread" data-thread-key="/bootstrap/code/2015/11/21/bootstrap笔记" data-title="_posts/2015-11-21-bootstrap笔记.md" data-url="/bootstrap/code/2015/11/21/bootstrap笔记"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"wiyt"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		<script src="/js/prism.js" type="text/javascript"></script>
+		<!--<script src="/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>-->
+		<script>
+			var navitem = document.querySelectorAll(".sidebar-nav-item");
+			for(var i = 0; i < navitem.length; i++){
+				navitem[i].addEventListener("click",active);
+			}
+			function active(){
+				for(var i = 0; i < navitem.length; i++){
+					navitem[i].className = "sidebar-nav-item";
+				}
+				this.className = "sidebar-nav-item active"
+			}
+		</script>
+	</body>
+</html>

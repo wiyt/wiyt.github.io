@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>css笔记</title>
+	<!-- 上线用 -->
+	<link href="/css/prism.css" rel="stylesheet" type="text/css" />
+	<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<script src="/js/jquery-2.1.4.min.js" type="text/javascript"></script>
+	
+	<!-- 测试用 -->
+<!-- 	<link href="../css/prism.css" rel="stylesheet" type="text/css" />
+	<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" /> -->
+	<style type="text/css">
+		*{
+			box-sizing:border-box;
+		}
+		.sidebar{
+			background-color: #202020;
+			padding:35px;
+		}
+		body{
+			background-color:#E8E8E8;
+		}
+		.col-sm-9{
+			background-color:#fff;
+		}
+		html,body,.container,.row,.col-sm-3,.sidebar{
+				height:100%;
+		}
+		.head{
+			text-align: left;
+			/*border-bottom: 1px solid #EEE;*/
+			padding:20px;
+		}
+		.sidebar p{
+			color:#fff;
+		}
+		img{
+			width:100%;
+		}
+		.content{
+			margin-top: 10px;
+    	padding: 25px;
+		}
+	</style>
+	</head>
+	<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-3">
+				<div class="sidebar" id="sidebar">
+					<div class="head">
+						<h3 class="head-title"><a href="/">『幽窗孤灯』</a></h3>
+					</div>
+					<p>
+						『去爱！』
+					</p>
+					<p>
+						 『去生活！』
+					</p>
+					<p>
+						 『我自凌风飞扬！』
+					</p>
+					<div class="sidebar-nav">
+						<ul class="nav nav-pills nav-stacked">
+								<li class="nav-divider"></li>
+								<li class="sidebar-nav-item"><a href="/" class="">主页</a></li>
+								<li class="nav-divider"></li>
+								<li class="sidebar-nav-item"><a href="/archive.html" class="">文章归档</a></li>
+								<li class="nav-divider"></li>
+								<li class="sidebar-nav-item"><a href="/categories.html" class="">文章分类</a></li>
+								<li class="nav-divider"></li>
+								<li class="sidebar-nav-item"><a href="/about.html" class="">关于我</a></li>
+								<li class="nav-divider"></li>
+								<li class="sidebar-nav-item"><a href="https://github.com/wiyt" class="">My github</a></li>
+								<li class="nav-divider"></li>
+						</ul>
+					</div>
+					<p>『© 2015. All rights reserved.』</p>
+				</div>
+			</div>
+			<div class="col-sm-9">
+				<div class="wrap">
+					<div class="content">
+						<div class="posts">
+										<h2 id="css">CSS</h2>
+<p>### 选择器
+1.标签选择器 <code>p{color:red;}</code>
+2.类选择器 <code>.class{color:red}</code> <br />
+3.id选择器 <code>#id{color:red} </code><br />
+4.子选择器 <code>p&gt;a{color:red}</code>  <br />
+5.包含（后代）选择器 <code>p a{color:red}</code>
+6.通用选择器 <code>*{color:red}</code>  <br />
+7.伪类选择器 <code>a:hover{color:red}</code>  <br />
+8.分组选择器 <code>a,p{color:red}</code>  <br />
+### 继承
+不可继承的：</p>
+
+<p><code>css
+display、margin、border、padding、background、height、
+min-height、max-height、width、min-width、max-width、overflow、
+position、left、right、top、bottom、z-index、float、clear、
+table-layout、vertical-align、page-break-after、
+page-bread-before和unicode-bidi
+</code></p>
+
+<p>（注：基本上什么盒子外边距、内边距，还有定位什么的是不能被继承的）  <br />
+所有元素可继承：<code>visibility和cursor</code>。  <br />
+内联元素可继承：</p>
+
+<p><code>css
+letter-spacing、word-spacing、white-space、line-height、color、
+font、font-family、font-size、font-style、font-variant、font-weight、
+text-decoration、text-transform、direction
+</code></p>
+
+<p>终端块状元素可继承：<code>text-indent</code>和<code>text-align</code>。  <br />
+列表元素可继承：<code>list-style、list-style-type、list-style-position、list-style-image</code>。  <br />
+表格元素可继承：<code>border-collapse</code>。  <br />
+### 权值规则
+标签选择符的权值为1，类选择符的权值为10，id选择符的权值为100；
+继承的权值为0.1，可以理解为继承的权值最低。
+### 层叠
+层叠就是对同一个html元素可以有多个css样式存在，当有相同的权值存在时，会根据这些css样式的先后顺序来决定，处于最后的css样式被应用。
+### 重要性
+!important 为某些样式设置最高权值。  <br />
+如下代码</p>
+
+<p><code>css
+ p{color:red!important;}
+    p{color:green;}
+    &lt;p class="first"&gt;三年级时，我还是一个&lt;span&gt;胆小如鼠&lt;/span&gt;的小女孩。&lt;/p&gt;
+</code>
+这首p段落的文本显示为red红色
+### 元素分类
+常用的块状元素有：</p>
+
+<p>```html</p>
+<div>、<p>、<h1>...<h6>、<ol>、<ul>、<dl>、<table>、<address>、<blockquote>、<form>
+```
+
+常用的内联元素有：
+    
+```html
+<a>、<span>、<br />、<i>、<em>、<strong>、<label>、<q>、<var>、<cite>、<code>
+```
+
+常用的内联块状元素有：  
+  
+```html
+<img />、<input />
+```
+
+----------
+
+
+
+</code></cite></var></q></label></strong></em></i></span></a></form></blockquote></address></table></dl></ul></ol></h6></h1></p></div>
+
+<!-- 多说评论框 start -->
+<div class="ds-thread" data-thread-key="/code/2015/11/21/css笔记" data-title="_posts/2015-11-21-css笔记.md" data-url="/code/2015/11/21/css笔记"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"wiyt"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		<script src="/js/prism.js" type="text/javascript"></script>
+		<!--<script src="/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>-->
+		<script>
+			var navitem = document.querySelectorAll(".sidebar-nav-item");
+			for(var i = 0; i < navitem.length; i++){
+				navitem[i].addEventListener("click",active);
+			}
+			function active(){
+				for(var i = 0; i < navitem.length; i++){
+					navitem[i].className = "sidebar-nav-item";
+				}
+				this.className = "sidebar-nav-item active"
+			}
+		</script>
+	</body>
+</html>

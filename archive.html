@@ -2,14 +2,18 @@
 layout: default
 title: Archive
 ---
-<h3>全部文章：</h3>
-<ul>
+<h3>文章归档：</h3>
+<hr>
+<!-- <ul>
 　　{% for post in site.posts %}
 　　<li>{{ post.date | date_to_string }} 
 			<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
 		</li>
 　　{% endfor %}
-</ul>
+</ul> -->
+{% include JB/setup %}
+{% assign posts_collate = site.posts %}
+{% include JB/posts_collate %}
 <script>
 	var navitem = document.querySelectorAll(".sidebar-nav-item");
 	navitem[1].className = "sidebar-nav-item active"

@@ -1,15 +1,13 @@
-auto: true
-paginate: 8
-baseurl: /wiyt.github.io
-pygments: true
-markdown: redcarpet
-redcarpet:
-  extensions:
-    - hard_wrap
-    - no_intra_emphasis
-    - autolink
-    - strikethrough
-    - fenced_code_blocks
-kramdown:
-  input: GFM
-# permalink: wiyt.github.io/_posts/:year/:month/:day/:title
+highlighter: pygments
+# markdown: redcarpet
+# redcarpet:
+#   extensions:
+#     - hard_wrap
+#     - no_intra_emphasis
+#     - autolink
+#     - strikethrough
+#     - fenced_code_blocks
+# kramdown:
+#   input: GFM
+permalink: /:categories/:year/:month/:day/:title 
+production_url : http://wiyt.github.io

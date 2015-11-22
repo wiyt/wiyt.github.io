@@ -2,7 +2,7 @@
 <html lang="zh">
 	<head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>{{ page.title }}</title>
+	<title>『幽窗孤灯』</title>
 	<!-- 上线用 -->
 	<link href="/css/prism.css" rel="stylesheet" type="text/css" />
 	<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -84,7 +84,159 @@
 				<div class="wrap">
 					<div class="content">
 						<div class="posts">
-										{{ content }}
+										<h3>文章分类·Categories</h3>
+<hr>
+<!-- <ul class="artical-list">
+
+<ul>
+	<li>
+		<h4>代码</h4>
+		<ul>
+				
+		</ul>
+	</li>
+	<li>
+		<h4>思考</h4>
+		<ul>
+		
+		</ul>
+	</li>
+	<li>
+		<h4>其他</h4>
+		<ul>
+		
+		</ul>
+	</li>
+</ul>
+</ul>
+</ul> -->
+
+
+<ul class="tag_box inline">
+  
+  
+
+
+  
+     
+    	<li><a href="#bootstrap-ref">
+    		bootstrap <span>1</span>
+    	</a></li>
+     
+    	<li><a href="#css-ref">
+    		css <span>1</span>
+    	</a></li>
+     
+    	<li><a href="#html-ref">
+    		html <span>1</span>
+    	</a></li>
+     
+    	<li><a href="#test-ref">
+    		test <span>1</span>
+    	</a></li>
+    
+  
+
+
+</ul>
+
+
+ 
+  <h2 id="bootstrap-ref">bootstrap</h2>
+  <ul>
+      
+    
+
+
+  
+    
+      
+      	
+      	<li><a href="/bootstrap/2015/11/21/bootstrap%E7%AC%94%E8%AE%B0">bootstrap笔记</a></li>
+      	
+      
+    
+  
+
+
+
+  </ul>
+ 
+  <h2 id="css-ref">css</h2>
+  <ul>
+      
+    
+
+
+  
+    
+      
+      	
+      	<li><a href="/css/2015/11/21/css%E7%AC%94%E8%AE%B0">css笔记</a></li>
+      	
+      
+    
+  
+
+
+
+  </ul>
+ 
+  <h2 id="html-ref">html</h2>
+  <ul>
+      
+    
+
+
+  
+    
+      
+      	
+      	<li><a href="/html/2015/11/21/html%E7%AC%94%E8%AE%B0">html笔记</a></li>
+      	
+      
+    
+  
+
+
+
+  </ul>
+ 
+  <h2 id="test-ref">test</h2>
+  <ul>
+      
+    
+
+
+  
+    
+      
+      	
+      	<li><a href="/test/2015/11/22/hello-world">hello world</a></li>
+      	
+      
+    
+  
+
+
+
+  </ul>
+
+<script>
+	var navitem = document.querySelectorAll(".sidebar-nav-item");
+	navitem[2].className = "sidebar-nav-item active";
+	// $(".tag_box").addClass("nav nav-tabs");
+	$(".tag_box li").addClass("label label-primary").css("margin","0 1px");
+	$(".tag_box li a").css("color","#fff");
+	// $(".tag_box li a span").addClass("badge");
+	var span = $(".tag_box li a span");
+	for (var i = span.length - 1; i >= 0; i--) {
+		var jqspan = $(span[i]);
+		var text = jqspan.text();
+		jqspan.html("<sup>"+text+"</sup>");
+		jqspan.children().css({"border":"1px solid black","padding":"2px","background-color": "#337ab7"})
+	}
+</script>
 						</div>
 					</div>
 				</div>
