@@ -71,12 +71,10 @@ title: 『幽窗孤灯』
 	// $(".tag_box").addClass("nav nav-tabs");
 	$(".tag_box li").addClass("label label-primary").css("margin","0 1px");
 	$(".tag_box li a").css("color","#fff");
-	// $(".tag_box li a span").addClass("badge");
-	var span = $(".tag_box li a span");
-	for (var i = span.length - 1; i >= 0; i--) {
-		var jqspan = $(span[i]);
-		var text = jqspan.text();
-		jqspan.html("<sup>"+text+"</sup>");
-		jqspan.children().css({"border":"1px solid black","padding":"2px","background-color": "#337ab7"})
-	}
+	$(".tag_box li a span")
+  .html(function(i,orig){
+    return "<sup>"+orig+"</sup>"
+  })
+  .children()
+  .css({"border":"1px solid black","padding":"2px","background-color": "#337ab7"});
 </script>
